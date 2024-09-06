@@ -7,14 +7,14 @@
 - clone repository
   `git clone https://github.com/Azda45/Whatsapp-Sender.git`
 - Installing package
-  `npm i`
+  ```npm i```
 - Start server
-  `node index.js`
+  ```node index.js```
 ## feature
 - Send using rest api
 - custom command and response text or image
   #### text response
-  `{
+  ```{
         "commands": [
             "hi"
         ],
@@ -23,9 +23,9 @@
         "response": "This response.",
         "typingDelay": 2000,
         "sendDelay": 1000
-    }` 
+    }```
   #### image response
-  `{
+  ```{
         "commands": [
             "hello"
         ],
@@ -35,4 +35,4 @@
         "typingDelay": 2000,
         "sendDelay": 1000,
         "response": "text response when needed.",
-    },`
+    },```
