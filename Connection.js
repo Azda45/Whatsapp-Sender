@@ -3,6 +3,7 @@ const { makeWASocket, useMultiFileAuthState, DisconnectReason } = require('@whis
 const { Boom } = require('@hapi/boom');
 const qrcode = require('qrcode-terminal');
 const pino = require('pino');
+const { handleIncomingMessage } = require('./handler'); // Import handler pesan
 
 const sessionName = 'kanjut';
 let sock;
@@ -39,6 +40,11 @@ async function connectToWhatsApp() {
         });
 
         sock.ev.on('creds.update', saveCreds);
+
+        // Menangani pesan masuk dan delegasikan ke commandHandler
+        sock.ev.on('messages.upsert', (m) => {
+            handleIncomingMessage(m, sock);
+        });
     } catch (error) {
         console.error('Error connecting to WhatsApp:', error);
     }

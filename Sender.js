@@ -14,21 +14,20 @@ async function sendMessage(number, message) {
     await sock.presenceSubscribe(jid);
     await sock.sendPresenceUpdate('composing', jid);
 
-    const typingDelay = getRandomDelay(5000, 15000);
+    const typingDelay = getRandomDelay(5 * 1000, 15 * 1000);
     await delay(typingDelay);
     await sock.sendPresenceUpdate('paused', jid);
 
-    const sendDelay = getRandomDelay(10000, 30000);
+    const sendDelay = getRandomDelay(10 * 1000, 30 * 1000);
     await delay(sendDelay);
     await sock.sendMessage(jid, { text: message });
-    console.log(`Pesan berhasil dikirim ke ${jid}`);
 
-    const postSendDelay = getRandomDelay(10000, 25000);
-    console.log(`Menunggu ${postSendDelay / 1000} detik sebelum dapat mengirim lagi.`);
+    const postSendDelay = getRandomDelay(10 * 1000, 25 * 1000);
+    console.log(`Pesan berhasil dikirim ke ${jid}. Menunggu ${postSendDelay / 1 * 1000} detik sebelum dapat mengirim lagi.`);
 
     return {
         message: `Pesan berhasil dikirim ke ${number}.`,
-        cooldown: postSendDelay / 1000,
+        cooldown: postSendDelay / 1 * 1000,
     };
 }
 

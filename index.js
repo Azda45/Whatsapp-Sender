@@ -1,19 +1,29 @@
 // server.js
 const express = require('express');
+const cors = require('cors');
 const { connectToWhatsApp } = require('./Connection');
 const { sendMessage } = require('./Sender');
 const dotenv = require('dotenv');
-
 dotenv.config(); // Load environment variables
 
 const app = express();
-const port = process.env.PORT || 3000; // Use PORT from env or default to 3000
+const port = process.env.PORT;
+const API_KEY = process.env.API_KEY; // Load API key from .env
 
 // Middleware untuk parsing input JSON
 app.use(express.json());
 
-// Endpoint API untuk mengirim pesan
-app.post('/api/send', async (req, res) => {
+// Middleware untuk cek API Key
+function checkApiKey(req, res, next) {
+  const apiKey = req.headers['x-api-key']; // Ambil API key dari header
+  if (!apiKey || apiKey !== API_KEY) {
+    return res.status(403).json({ message: 'API Key tidak valid atau tidak disertakan.' });
+  }
+  next();
+}
+
+// Endpoint API untuk mengirim pesan dengan validasi API key
+app.post('/api/send', checkApiKey, async (req, res) => {
   const { number, message } = req.body;
   try {
     const result = await sendMessage(number, message);
