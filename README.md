@@ -31,6 +31,8 @@
         "typingDelay": 2000,
         "sendDelay": 1000
     }```
+
+  ---
   
   #### image response
   ```{
