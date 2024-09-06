@@ -5,11 +5,17 @@
 - Install Nodejs
   min Nodejs 18
 - clone repository
-  ```git clone https://github.com/Azda45/Whatsapp-Sender.git```
+  ```
+  git clone https://github.com/Azda45/Whatsapp-Sender.git
+  ```
 - Installing package
-  ```npm i```
+  ```
+  npm i
+  ```
 - Start server
-  ```node index.js```
+  ```
+  node index.js
+  ```
 ## feature
 - Send using rest api
 - custom command and response text or image
