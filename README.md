@@ -2,8 +2,8 @@
 
 ## how to deploy
 
-- Install Nodejs
-  min Nodejs 18
+- Install [Nodejs](https://nodejs.org/en)
+  min Nodejs 18.
 - clone repository
   ```
   git clone https://github.com/Azda45/Whatsapp-Sender.git
