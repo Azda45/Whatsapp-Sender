@@ -5,7 +5,7 @@
 - Install Nodejs
   min Nodejs 18
 - clone repository
-  `git clone https://github.com/Azda45/Whatsapp-Sender.git`
+  ```git clone https://github.com/Azda45/Whatsapp-Sender.git```
 - Installing package
   ```npm i```
 - Start server
