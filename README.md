@@ -18,6 +18,12 @@
   ```
 ## feature
 - Send using rest api
+  ```
+  curl -X POST http://localhost:5000/api/send \
+       -H "Content-Type: application/json" \
+       -H "x-api-key: your_api_key_here" \
+       -d '{"number": "countrycode-phone-number-without-plus-sign", "message": "Hi, this message is sent using the API"}'
+  ```
 - custom command and response text
   
   #### text response
