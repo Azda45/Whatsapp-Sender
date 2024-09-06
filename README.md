@@ -18,7 +18,7 @@
   ```
 ## feature
 - Send using rest api
-- custom command and response text or image
+- custom command and response text
   
   #### text response
   ```{
@@ -31,9 +31,8 @@
         "typingDelay": 2000,
         "sendDelay": 1000
     }```
+- custom command and response image
 
-  ---
-  
   #### image response
   ```{
         "commands": [
