@@ -21,7 +21,8 @@
 - custom command and response text
   
   #### text response
-  ```{
+  ```
+  {
         "commands": [
             "hi"
         ],
@@ -30,11 +31,13 @@
         "response": "This response.",
         "typingDelay": 2000,
         "sendDelay": 1000
-    }```
+    }
+  ```
 - custom command and response image
 
   #### image response
-  ```{
+  ```
+  {
         "commands": [
             "hello"
         ],
@@ -44,4 +47,5 @@
         "typingDelay": 2000,
         "sendDelay": 1000,
         "response": "text response when needed.",
-    },```
+    },
+  ```
