@@ -4,10 +4,7 @@
 
 - Install [Nodejs](https://nodejs.org/en)
   min Nodejs 18.
-- clone repository
-  ```
-  git clone https://github.com/Azda45/Whatsapp-Sender.git
-  ```
+- Download file in [realeases](https://github.com/Azda45/Whatsapp-Sender/releases)
 - Installing package
   ```
   npm i
